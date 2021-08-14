@@ -6,10 +6,10 @@
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title class="text-h6">
-                    Application
+                    Lista de tarefas
                   </v-list-item-title>
                   <v-list-item-subtitle>
-                    subtext
+                   @rdrgzma
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -23,6 +23,7 @@
                 <v-list-item
                   v-for="item in items"
                   :key="item.title"
+                  :to = "item.to"
                   link
                 >
                   <v-list-item-icon>
@@ -42,7 +43,7 @@
       </v-app-bar>
 
       <v-main>
-          <!--  -->
+          <router-view/>
       </v-main>
 
     </v-app>
@@ -53,9 +54,8 @@
     data: () => ({ 
       drawer: null,
        items: [
-        {title: 'Dashboard', icon: 'mdi-view-dashboard'},
-        {title: 'Photos', icon: 'mdi-image'},
-        {title: 'About', icon: 'mdi-help-box'},
+        {title: 'Tarefas', icon: 'mdi-view-dashboard', to:'/'},
+        {title: 'Sobre', icon: 'mdi-help-box', to: '/sobre'},
       ]
     })  
   }
